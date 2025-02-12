@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "a70c74a9-1a02-44ea-b9f9-6429a78ce1b4",
+		"name": "Teste_MockServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19888796",
+		"_collection_link": "https://www.postman.com/francocanducci/workspace/desafio-tcnico/collection/19888796-a70c74a9-1a02-44ea-b9f9-6429a78ce1b4?action=share&source=collection_link&creator=19888796"
+	},
+	"item": [
+		{
+			"name": "testeForm_400",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Teste para garantir que o status da resposta seja 400\r",
+							"pm.test(\"Status é 400 (Bad Request)\", function () {\r",
+							"    pm.response.to.have.status(400);  // Verifica se o código de status é 400\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"\"  // Enviando um campo obrigatório vazio\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{url}}/testeFormBad",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"testeFormBad"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/testeFormBad",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"testeFormBad"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "testeForm_500",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status é 500 (Internal Server Error)\", function () {\r",
+							"    pm.response.to.have.status(500);  // Verifica se o código de status é 500\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/testeFormInt",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"testeFormInt"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/testeFormInt",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"testeFormInt"
+							]
+						}
+					},
+					"code": 500,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://16887c1c-8958-4edd-a73b-08634505f46c.mock.pstmn.io"
+		}
+	]
+}
