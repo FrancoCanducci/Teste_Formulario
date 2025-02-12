@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cadastro</title>
+</head>
+<body>
+  <h2>Cadastro de Usuário</h2>
+  <form id="formCadastro" action="#" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="emailConfirm">Confirmação de E-mail:</label>
+    <input type="email" id="emailConfirm" name="emailConfirm" required><br><br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required><br><br>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <p id="mensagemErro" style="color:red;"></p>
+  <p id="mensagemSucesso" style="color:green;"></p>
+
+  <script>
+    const form = document.getElementById("formCadastro");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Limpar mensagens anteriores
+      document.getElementById("mensagemErro").innerText = '';
+      document.getElementById("mensagemSucesso").innerText = '';
+
+      const email = document.getElementById("email").value;
+      const emailConfirm = document.getElementById("emailConfirm").value;
+      const senha = document.getElementById("senha").value;
+
+      // Validação dos campos obrigatórios
+      if (!document.getElementById("nome").value || !email || !emailConfirm || !senha) {
+        document.getElementById("mensagemErro").innerText = 'Todos os campos devem ser preenchidos!';
+        return;
+      }
+
+      // Validação de senha forte
+      const senhaRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+      if (!senhaRegex.test(senha)) {
+        document.getElementById("mensagemErro").innerText = 'A senha deve ter no mínimo 8 caracteres, 1 letra maiúscula e 1 número!';
+        return;
+      }
+
+      // Validação de confirmação de e-mail
+      if (email !== emailConfirm) {
+        document.getElementById("mensagemErro").innerText = 'Os e-mails não coincidem!';
+        return;
+      }
+
+      // Caso todas as validações sejam passadas
+      document.getElementById("mensagemSucesso").innerText = 'Cadastro realizado com sucesso!';
+    });
+  </script>
+</body>
+</html>
