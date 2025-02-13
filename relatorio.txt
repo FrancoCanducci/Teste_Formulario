@@ -7,3 +7,70 @@ collected 4 items
 test.py ....                                                             [100%]
 
 ============================= 4 passed in 16.45s ==============================
+Relatório de Desempenho - K6
+
+1. Total de Verificações
+
+Verificações realizadas: 5802
+Porcentagem de sucesso: 100.00%
+2. Dados Enviados e Recebidos
+
+Dados recebidos: 2.4 MB, com uma taxa média de 78 kB/s
+Dados enviados: 161 kB, com uma taxa média de 5.2 kB/s
+3. Taxa de Erro
+
+Taxa de erro: 0.00% (0 erros em 2901 requisições)
+4. Latências das Requisições HTTP
+
+Tempo de bloqueio HTTP:
+Tempo médio: 9.19ms
+Mínimo: 0s
+Máximo: 315.08ms
+Percentis: 90% = 0s, 95% = 0s
+Tempo de conexão HTTP:
+Tempo médio: 3.09ms
+Mínimo: 0s
+Máximo: 130.85ms
+Percentis: 90% = 0s, 95% = 0s
+Duração das requisições HTTP:
+Tempo médio: 34.36ms
+Mínimo: 12.38ms
+Mediano: 30.53ms
+Máximo: 379.8ms
+Percentis: 90% = 46.7ms, 95% = 56.67ms
+Tempo de recepção HTTP:
+Tempo médio: 778.18µs
+Mínimo: 0s
+Máximo: 21.73ms
+Percentis: 90% = 2.23ms, 95% = 4.11ms
+Tempo de envio HTTP:
+Tempo médio: 124.28µs
+Mínimo: 0s
+Máximo: 2.01ms
+Percentis: 90% = 438.9µs, 95% = 538.2µs
+Tempo de handshake TLS:
+Tempo médio: 5.58ms
+Mínimo: 0s
+Máximo: 226.93ms
+Percentis: 90% = 0s, 95% = 0s
+Tempo de espera HTTP:
+Tempo médio: 33.46ms
+Mínimo: 9.18ms
+Mediano: 29.72ms
+Máximo: 379.8ms
+Percentis: 90% = 45.91ms, 95% = 54.42ms
+5. Quantidade de Requisições
+
+Requisições HTTP realizadas: 2901
+Taxa de requisições: 93.51 requisições por segundo
+6. Duração das Iterações
+
+Duração média: 1.04s
+Duração mínima: 1.01s
+Duração mediana: 1.03s
+Duração máxima: 1.38s
+Percentis: 90% = 1.05s, 95% = 1.08s
+7. Virtual Users (VUs)
+
+VUs utilizados: 1 (mínimo de 1, máximo de 100)
+VUs máximos: 100 (mínimo e máximo de 100)
